@@ -47,6 +47,19 @@ function renderImage(event){
         let preview = document.querySelector("#file-input-preview")
         preview.src = src
     }
+    renderRemoveImageButton()
+}
+
+function renderRemoveImageButton(){
+    const deleteButton = document.createElement('button')
+    const imageDiv = document.querySelector('#preview')
+
+    deleteButton.textContent = "Remove Image"
+
+    imageDiv.appendChild(deleteButton)
+    deleteButton.addEventListener('click', () => {
+        event.target.parentNode.remove()
+    })
 }
 
 function renderPenpals(name, address, age){
