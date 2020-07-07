@@ -14,6 +14,15 @@
         <input name="name" placeholder="Name">
         <input name="address" placeholder="Address">
         <input name="age" type="number" placeholder="Age">
+        <input type="file"
+            id="file-input"
+            multiple="false"
+            accept="image/*"
+            onchange="renderImage(event)"
+        />
+        <div id="preview">
+            <img id="file-input-preview">
+        </div>
         <button id='submit-penpal' type="submit">Become a Pen-Pal!</button>
     </form>
 

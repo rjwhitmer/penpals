@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_155400) do
+ActiveRecord::Schema.define(version: 2020_07_07_215158) do
 
   create_table "penpals", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_155400) do
     t.integer "user_penpals_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.binary "image"
     t.index ["user_penpals_id"], name: "index_penpals_on_user_penpals_id"
   end
 
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_155400) do
     t.integer "user_penpals_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.binary "image"
     t.index ["user_penpals_id"], name: "index_users_on_user_penpals_id"
   end
 

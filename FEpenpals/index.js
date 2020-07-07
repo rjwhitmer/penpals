@@ -39,6 +39,16 @@ function showPenpals(data){
     })
 }
 
+function renderImage(event){
+    if (event.target.files) {
+        console.log(event.target.files[0])
+        let src = URL.createObjectURL(event.target.files[0])
+        let srcURL = HTMLMediaElement.src
+        let preview = document.querySelector("#file-input-preview")
+        preview.src = src
+    }
+}
+
 function renderPenpals(name, address, age){
     const $div = document.createElement('div')
     const userAddress = document.createElement('p')
