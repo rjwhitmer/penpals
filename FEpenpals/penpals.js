@@ -5,37 +5,6 @@ fetch(penpalURL)
     .then(showPenpals)
 
 const penpalCards = document.querySelector('#penpals')
-const penpalForm = document.querySelector('#penpal-form')
-
-penpalForm.addEventListener('submit', createPenpal)
-
-function createPenpal(event){
-    event.preventDefault()
-    const formData = new FormData(event.target)
-    const name = formData.get('name')
-    const address = formData.get('address')
-    const age = formData.get('age')
-    const image = formData.get('image')
-    event.target.reset()
-    
-
-    fetch(penpalURL, {
-        method: 'POST', 
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: name,
-            address: address,
-            age: age,
-            image: image
-        })
-    })
-    .then(response => response.json())
-    .then(console.log)
-    // .then(renderPenpals(name, address, age, image))
-}
 
 function showPenpals(data){
     data.forEach(penpal => {
@@ -93,7 +62,6 @@ function renderPenpals(name, address, age, image, lettersSent, lettersReceived){
     $div.append(userLettersSent)
     $div.append(userLettersReceived)
     penpalCards.append($div)
-    
 }
 
 function capitalizeName(name){

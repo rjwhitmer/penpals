@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Tell us a bit about yourself!</h1>
-    <form>
+    <form id="penpal-form">
         <input name="name" placeholder="Name"/>
         <input name="address" placeholder="Address"/>
         <input name="age" placeholder="Age"/>
@@ -29,9 +29,12 @@
         <h2>Log-in information</h2>
         <input name="email" placeholder="E-mail Address"/>
         <input name="password" placeholder="Password"/>
-        <input type="submit"/>
+        <input onclick="window.location.href='http://localhost:3001/penpals.html'" type="submit" href="index.html"/>
     </form>
 
-    <a href="index.html">Go Back</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="penpals.html">Penpals</a>
+    </nav>
 </body>
 </html>
