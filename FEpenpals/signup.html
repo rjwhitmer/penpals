@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="signup.js" defer></script>
+    <link href="index.css" type="text/css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tell us a bit about yourself!</h1>
+    <form>
+        <input name="name" placeholder="Name"/>
+        <input name="address" placeholder="Address"/>
+        <input name="age" placeholder="Age"/>
+        <div id="image-upload-preview">
+            <p>Upload a picture!</p>
+            <input type="file"
+                name="image"
+                id="file-input"
+                multiple="false"
+                accept="image/*"
+                onchange="renderImage(event)"
+            />
+            <div id="preview">
+                <img id="file-input-preview">
+            </div>
+        </div>
+        <h2>Log-in information</h2>
+        <input name="email" placeholder="E-mail Address"/>
+        <input name="password" placeholder="Password"/>
+        <input type="submit"/>
+    </form>
+
+    <a href="index.html">Go Back</a>
+</body>
+</html>
