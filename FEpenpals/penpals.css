@@ -49,24 +49,49 @@ table {
 
 /* End Meyer Reset */
 
-body {
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
-}
-
 form {
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    width: 15rem;
 }
 
-form > input {
+form > input, button, #image-upload-preview {
+    margin: 5px;
+}
+
+#image-upload-preview {
+    border: solid rgba(255, 0, 0, .5) 1px;
+    padding: .5rem;
+}
+
+#image-upload-preview > p {
+    margin-bottom: 5px;
+}
+
+#file-input-preview {
+    max-height: 300px;
+    
+}
+#penpals {
     display: flex;
-    flex-direction: row;
-    padding: 5px;
-    margin: 1rem;
-    border-radius: 10%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#penpal-card {
+    border: 1px solid black;
+    padding: .5rem;
+    margin-top: 1rem;
+    text-align: center;
+    width: 5rem;
+}
+
+#penpal-card > p {
+    margin-top: 1em;
+}
+
+#greeting {
+    font-size: 48px;
+    text-align: center;
+    padding: 2rem;
 }

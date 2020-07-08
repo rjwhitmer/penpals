@@ -3,35 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penpals!</title>
     <script src='index.js' defer></script>
-    <link rel='stylesheet' type='text/css' href='index.css'/>
+    <link href='index.css' rel='stylesheet' type='text/css'/>
+    <title>Penpals!</title>
 </head>
 <body>
-    <h1 id="greeting">Welcome to Pen-Pals!</h1>
-
-    <form id='penpal-form'>
-        <input name="name" placeholder="Name">
-        <input name="address" placeholder="Address">
-        <input name="age" type="number" placeholder="Age">
-        <div id="image-upload-preview">
-            <p>Submit an image!</p>
-            <input type="file"
-                name="image"
-                id="file-input"
-                multiple="false"
-                accept="image/*"
-                onchange="renderImage(event)"
-            />
-            <div id="preview">
-                <img id="file-input-preview">
-            </div>
+    <h1>Welcome to PenPals!</h1>
+    <nav>
+        <div id="sign-up">
+            <a href='signup.html'>Become a PenPal!</a>
         </div>
-        <button id='submit-penpal' type="submit">Become a Pen-Pal!</button>
-    </form>
-
-    <div id="penpals">
+        <div id="guest">
+            <a href='penpals.html'>Continue as Guest!<a>
+        </div>
+    </nav>
+    <div id="login">
+        <h1>Already a Member?</h1>
+        <form>
+            <input name="email" placeholder="E-mail Address"/>
+            <input name="password" type="password" placeholder="Password"/>
+            <input type="submit"/>
+        </form>
     </div>
-    
 </body>
 </html>

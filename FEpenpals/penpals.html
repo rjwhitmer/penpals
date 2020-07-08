@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penpals!</title>
+    <script src='penpals.js' defer></script>
+    <link rel='stylesheet' type='text/css' href='penpals.css'/>
+</head>
+<body>
+    <h1 id="greeting">Welcome to Pen-Pals!</h1>
+
+    <form id='penpal-form'>
+        <input name="name" placeholder="Name">
+        <input name="address" placeholder="Address">
+        <input name="age" type="number" placeholder="Age">
+        <div id="image-upload-preview">
+            <p>Submit an image!</p>
+            <input type="file"
+                name="image"
+                id="file-input"
+                multiple="false"
+                accept="image/*"
+                onchange="renderImage(event)"
+            />
+            <div id="preview">
+                <img id="file-input-preview">
+            </div>
+        </div>
+        <button id='submit-penpal' type="submit">Become a Pen-Pal!</button>
+    </form>
+
+    <div id="penpals">
+    </div>
+    
+</body>
+</html>
