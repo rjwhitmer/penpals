@@ -13,7 +13,8 @@ penpal1 = Penpal.create({
     name: "tom",
     address: "456 predictable ln",
     age: 55,
-    letters_sent: 10
+    letters_sent: 10,
+    letters_received: 2
 })
 
 bob = User.create({

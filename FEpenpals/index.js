@@ -17,6 +17,8 @@ function createPenpal(event){
     const address = formData.get('address')
     const age = formData.get('age')
     const image = formData.get('image')
+    event.target.reset()
+    console.log(formData.keys())
 
     fetch(penpalURL, {
         method: 'POST', 
@@ -32,7 +34,8 @@ function createPenpal(event){
         })
     })
     .then(response => response.json())
-    .then(renderPenpals(name, address, age, image))
+    .then(console.log)
+    // .then(renderPenpals(name, address, age, image))
 }
 
 function showPenpals(data){
@@ -42,13 +45,14 @@ function showPenpals(data){
             penpal.address,
             penpal.age,
             penpal.image,
-            penpal.letters_sent)
+            penpal.letters_sent,
+            penpal.letters_received)
     })
 }
 
 function renderImage(event){
     if (event.target.files) {
-        console.log(event.target.files[0])
+        console.log(event.target.files)
         let src = URL.createObjectURL(event.target.files[0])
         let srcURL = HTMLMediaElement.src
         let preview = document.querySelector("#file-input-preview")
@@ -69,11 +73,12 @@ function renderRemoveImageButton(){
     })
 }
 
-function renderPenpals(name, address, age, image, lettersSent){
+function renderPenpals(name, address, age, image, lettersSent, lettersReceived){
     const $div = document.createElement('div')
     const userAddress = document.createElement('p')
     const userAge = document.createElement('p')
     const userLettersSent = document.createElement('p')
+    const userLettersReceived = document.createElement('p')
     const userImage = document.createElement('img')
 
     $div.id = "penpal-card"
@@ -81,11 +86,13 @@ function renderPenpals(name, address, age, image, lettersSent){
     userAddress.textContent =`Address: ${address}` 
     userAge.textContent = `Age: ${age}`
     userLettersSent.textContent = `Letters Sent: ${lettersSent}`
+    userLettersReceived.textContent = `Letters Received: ${lettersReceived}`
     userImage.src = image
 
     $div.append(userAddress)
     $div.append(userAge)
     $div.append(userLettersSent)
+    $div.append(userLettersReceived)
     penpalCards.append($div)
     
 }
