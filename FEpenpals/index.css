@@ -56,12 +56,22 @@ form {
     width: 15rem;
 }
 
-form > input, button {
+form > input, button, #image-upload-preview {
     margin: 5px;
 }
 
+#image-upload-preview {
+    border: solid rgba(255, 0, 0, .5) 1px;
+    padding: .5rem;
+}
+
+#image-upload-preview > p {
+    margin-bottom: 5px;
+}
+
 #file-input-preview {
-    max-height: 400px;
+    max-height: 300px;
+    
 }
 #penpals {
     display: flex;

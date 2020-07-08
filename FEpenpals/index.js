@@ -16,6 +16,7 @@ function createPenpal(event){
     const name = formData.get('name')
     const address = formData.get('address')
     const age = formData.get('age')
+    const image = formData.get('image')
 
     fetch(penpalURL, {
         method: 'POST', 
@@ -26,16 +27,22 @@ function createPenpal(event){
         body: JSON.stringify({
             name: name,
             address: address,
-            age: age
+            age: age,
+            image: image
         })
     })
     .then(response => response.json())
-    .then(renderPenpals(name, address, age))
+    .then(renderPenpals(name, address, age, image))
 }
 
 function showPenpals(data){
     data.forEach(penpal => {
-        renderPenpals(penpal.name, penpal.address, penpal.age)
+        renderPenpals(
+            penpal.name,
+            penpal.address,
+            penpal.age,
+            penpal.image,
+            penpal.letters_sent)
     })
 }
 
@@ -62,18 +69,23 @@ function renderRemoveImageButton(){
     })
 }
 
-function renderPenpals(name, address, age){
+function renderPenpals(name, address, age, image, lettersSent){
     const $div = document.createElement('div')
     const userAddress = document.createElement('p')
     const userAge = document.createElement('p')
+    const userLettersSent = document.createElement('p')
+    const userImage = document.createElement('img')
 
     $div.id = "penpal-card"
     $div.innerHTML = `<a>${capitalizeName(name)}</a>`
     userAddress.textContent =`Address: ${address}` 
     userAge.textContent = `Age: ${age}`
+    userLettersSent.textContent = `Letters Sent: ${lettersSent}`
+    userImage.src = image
 
     $div.append(userAddress)
     $div.append(userAge)
+    $div.append(userLettersSent)
     penpalCards.append($div)
     
 }

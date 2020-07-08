@@ -12,7 +12,8 @@ User.destroy_all
 penpal1 = Penpal.create({
     name: "tom",
     address: "456 predictable ln",
-    age: 55
+    age: 55,
+    letters_sent: 10
 })
 
 bob = User.create({

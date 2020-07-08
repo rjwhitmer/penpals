@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_215158) do
+ActiveRecord::Schema.define(version: 2020_07_08_155834) do
 
   create_table "penpals", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_215158) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.binary "image"
+    t.integer "letters_sent"
     t.index ["user_penpals_id"], name: "index_penpals_on_user_penpals_id"
   end
 
