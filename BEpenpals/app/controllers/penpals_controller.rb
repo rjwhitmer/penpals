@@ -1,4 +1,6 @@
 class PenpalsController < ApplicationController
+    skip_before_action :authenticate, only: [:index, :create]
+
     def index
         @penpals = Penpal.all
         render json: @penpals
@@ -9,7 +11,7 @@ class PenpalsController < ApplicationController
             name: params[:name],
             address: params[:address],
             age: params[:age],
-            image: params[:image]
+            image: params[:image],
         })
         render json: @penpal
     end

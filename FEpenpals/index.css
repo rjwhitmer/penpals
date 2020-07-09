@@ -50,17 +50,25 @@ table {
 /* End Meyer Reset */
 
 body {
+	background-image: url('./images/background.jpg');
+	background-size: 100%;
+}
+
+h1 {
+	background-color: blue;
 }
 
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 2rem;
+	padding: 2rem;
+	background-color: yellowgreen;
 }
 
 form {
-    padding: 2rem;
+	padding: 2rem;
+	background-color: tomato;
 }
 
 form > input {

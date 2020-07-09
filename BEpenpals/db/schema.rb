@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_07_08_165336) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.binary "image"
-    t.integer "letters_sent"
-    t.integer "letters_received"
+    t.integer "letters_sent", default: 0
+    t.integer "letters_received", default: 0
     t.index ["user_penpals_id"], name: "index_penpals_on_user_penpals_id"
   end
 

@@ -25,6 +25,6 @@ function userLogin(event){
 }
 
 function storeToken(data){
-    window.localStorage.setItem('access_token', data.token)
-    console.log(window.localStorage)
+    window.localStorage.setItem('token', data.token)
+    window.location.href='http://localhost:3001/user.html'
 }

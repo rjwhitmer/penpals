@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
+    skip_before_action :authenticate, only: [:create, :index]
+
     def index
-        @users = User.all
-        render json: @users, include: :penpals
+        user = @user.id
+        render json: user, include: :penpals
     end
 
     def show
-        @user = User.find_by(params[:id])
-        render json: { user: @user }
+        user = @user.id
+        render json: { user: @user }, include: :penpals
     end
 
     def create
