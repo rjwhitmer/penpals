@@ -1,11 +1,11 @@
 class UserPenpalsController < ApplicationController
+    # before_action :authenticate, only: [:create]
     def index
         @userpenpals = UserPenpal.all
         render json: @userpenpals
     end
 
     def create
-        # byebug
         @userpenpal = UserPenpal.new({
             user_id: params[:user_id],
             penpal_id: params[:penpal_id]

@@ -86,7 +86,7 @@ form > input, button, #image-upload-preview {
     width: 5rem;
 }
 
-#penpal-card > p {
+#penpal-card > * {
     margin-top: 1em;
 }
 

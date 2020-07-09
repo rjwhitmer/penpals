@@ -14,7 +14,9 @@ class UsersController < ApplicationController
             name: params[:name],
             address: params[:address],
             age: params[:age],
-            image: params[:image]
+            image: params[:image],
+            email: params[:email],
+            password: params[:password]
         })
         render json: { user: @user }
     end

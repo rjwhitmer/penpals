@@ -1,4 +1,5 @@
 const penpalURL = "http://localhost:3000/penpals"
+const userPenpalURL = "http://localhost:3000/user_penpals"
 
 fetch(penpalURL)
     .then(response => response.json())
@@ -14,7 +15,8 @@ function showPenpals(data){
             penpal.age,
             penpal.image,
             penpal.letters_sent,
-            penpal.letters_received)
+            penpal.letters_received,
+            penpal.id)
     })
 }
 
@@ -41,13 +43,14 @@ function renderRemoveImageButton(){
     })
 }
 
-function renderPenpals(name, address, age, image, lettersSent, lettersReceived){
+function renderPenpals(name, address, age, image, lettersSent, lettersReceived, id){
     const $div = document.createElement('div')
     const userAddress = document.createElement('p')
     const userAge = document.createElement('p')
     const userLettersSent = document.createElement('p')
     const userLettersReceived = document.createElement('p')
     const userImage = document.createElement('img')
+    const addPenpal = document.createElement('button')
 
     $div.id = "penpal-card"
     $div.innerHTML = `<a>${capitalizeName(name)}</a>`
@@ -57,13 +60,36 @@ function renderPenpals(name, address, age, image, lettersSent, lettersReceived){
     userLettersReceived.textContent = `Letters Received: ${lettersReceived}`
     userImage.src = image
 
+    addPenpal.textContent = `Add This Penpal!`
+    addPenpal.value = id
+    addPenpal.addEventListener("click", (event => {
+        const penpalID = event.target.value
+        console.log(penpalID)
+        fetch(userPenpalURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: 5,
+                penpal_id: penpalID
+            })
+        })
+    }))
+
     $div.append(userAddress)
     $div.append(userAge)
     $div.append(userLettersSent)
     $div.append(userLettersReceived)
+    $div.append(addPenpal)
     penpalCards.append($div)
 }
 
 function capitalizeName(name){
     return name[0].toUpperCase() + name.slice(1);
 }
+
+// function createUserPenpal(id){
+//     console.log(id)
+//     console.log(event.target.parentNode)
+// }
