@@ -56,6 +56,7 @@ table {
 body {
 	background-image: url('./images/home-background.jpg');
 	background-size: 100%;
+	text-align: center;
 }
 
 h1 {
@@ -79,7 +80,7 @@ nav > button {
 }
 
 form {
-	float: left;
+	display: inline-block;
 	padding: 3rem;
 	background-color: hsl(10 10% 80%);
 	opacity: .85;

@@ -99,25 +99,56 @@ form > input, button, #image-upload-preview {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+#penpal-info {
+    display: flex;
+    flex-direction: inherit;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: flex-end;
+    margin-top: 5rem;
+}
+
+#penpal-info > * {
+    display: inherit;
+    margin-top: 1.5rem;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+}
 #penpal-card {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: .5rem;
-    margin-top: 1rem;
     text-align: center;
     width: 25rem;
-    max-height: 10rem;
+    height: 16rem;
+    margin-top: 1em;
     background-color: hsl(10 10% 80%);
     opacity: .8;
+    background-image: url(images/brett-jordan-oO7txJP2hls-unsplash.jpg);
+    background-size: 100%;
 }
 
-#penpal-card > button {
-    width: 3.5rem;
+#penpal-info > button {
+    width: 4rem;
     height: 3.5rem;
     position: relative;
-    top: -10px;
-    right: -60px;
+    top: -200px;
+    right: -305px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#penpal-info > p {
+    display: flex;
+    flex-direction: inherit;
+    margin-top: .75em;
+    /* align-items: baseline; */
+}
+
+#penpal-info > #penpal-name {
+    margin-top: 4em;
 }
 
 #penpal-card > * {

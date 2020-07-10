@@ -62,22 +62,22 @@ function renderRemoveImageButton(){
 
 function renderPenpals(name, address, age, image, lettersSent, lettersReceived, id){
     const $div = document.createElement('div')
+    const $penpalInfoDiv = document.createElement('div')
     const userAddress = document.createElement('p')
     const userAge = document.createElement('p')
-    const userLettersSent = document.createElement('p')
     const userLettersReceived = document.createElement('p')
     const userImage = document.createElement('img')
     const addPenpal = document.createElement('button')
 
     $div.id = "penpal-card"
-    $div.innerHTML = `<a>${capitalizeName(name)}</a>`
+    $penpalInfoDiv.id = "penpal-info"
+    $penpalInfoDiv.innerHTML = `<p id="penpal-name">${capitalizeName(name)}</p>`
     userAddress.textContent =`Address: ${address}` 
     userAge.textContent = `Age: ${age}`
-    userLettersSent.textContent = `Letters Sent: ${lettersSent}`
     userLettersReceived.textContent = `Letters Received: ${lettersReceived}`
     userImage.src = image
 
-    addPenpal.textContent = `Add This Penpal!`
+    addPenpal.textContent = `Add Penpal!`
     addPenpal.value = id
 
     addPenpal.addEventListener("click", (event => {
@@ -95,11 +95,11 @@ function renderPenpals(name, address, age, image, lettersSent, lettersReceived, 
         })
     }))
 
-    $div.append(userAddress)
-    $div.append(userAge)
-    $div.append(userLettersSent)
-    $div.append(userLettersReceived)
-    $div.append(addPenpal)
+    $penpalInfoDiv.append(userAddress)
+    $penpalInfoDiv.append(userAge)
+    $penpalInfoDiv.append(userLettersReceived)
+    $penpalInfoDiv.append(addPenpal)
+    $div.append($penpalInfoDiv)
     penpalCards.append($div)
 }
 

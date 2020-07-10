@@ -34,6 +34,7 @@ function showPenpals(data){
 
 function renderPenpals(name, address, age, image, lettersReceived, id){
     const $div = document.createElement('div')
+    const $penpalInfoDiv = document.createElement('div')
     const userAddress = document.createElement('p')
     const userAge = document.createElement('p')
     const userLettersReceived = document.createElement('p')
@@ -42,7 +43,8 @@ function renderPenpals(name, address, age, image, lettersReceived, id){
     const letterCount = document.createElement('p')
 
     $div.id = "penpal-card"
-    $div.innerHTML = `<a>${capitalizeName(name)}</a>`
+    $penpalInfoDiv.id = "penpal-info"
+    $penpalInfoDiv.innerHTML = `<p id="penpal-name">${capitalizeName(name)}</p>`
     userAddress.textContent =`Address: ${address}` 
     userAge.textContent = `Age: ${age}`
     letterCount.textContent = lettersReceived
@@ -54,10 +56,11 @@ function renderPenpals(name, address, age, image, lettersReceived, id){
     sendLetter.value = id
     sendLetter.addEventListener('click', sendALetter)
 
-    $div.append(userAddress)
-    $div.append(userAge)
-    $div.append(userLettersReceived)
-    $div.append(sendLetter)
+    $penpalInfoDiv.append(userAddress)
+    $penpalInfoDiv.append(userAge)
+    $penpalInfoDiv.append(userLettersReceived)
+    $penpalInfoDiv.append(sendLetter)
+    $div.append($penpalInfoDiv)
     penpalCards.append($div)
 }
 
