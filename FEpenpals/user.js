@@ -1,7 +1,7 @@
 const urlSearchParams = new URLSearchParams(window.location.search)
 const userID = urlSearchParams.get("user")
 const userURL = `http://localhost:3000/users/${userID}`
-const penpalURL = 'http://localhost:3000/penpals'
+const penpalURL = 'http://localhost:3000/penpals/'
 const penpalCards = document.querySelector('#penpals')
 const logout = document.querySelector('#logout')
 
@@ -73,7 +73,17 @@ function userLogout(event){
 
 function sendALetter(event){
     event.preventDefault()
-    const letters = document.querySelector('#letter-counter')
-    letters.textContent = +(letters.textContent) + 1
-    
+    const letterCounterNode = event.currentTarget.parentNode
+    const letterCounter = letterCounterNode.querySelector('#letter-counter')
+    letterCounter.textContent = +(letterCounter.textContent) + 1
+    fetch((penpalURL+event.target.value), {
+        method: "PATCH", 
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+            letters_received: letterCounter.textContent
+        })
+    })
 }

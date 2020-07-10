@@ -15,4 +15,11 @@ class PenpalsController < ApplicationController
         })
         render json: @penpal
     end
+
+    def update
+        @penpal = Penpal.update({
+            letters_received: params[:letters_received]
+        })
+        render json: @penpal
+    end
 end
