@@ -20,7 +20,7 @@ Penpals is a student website designed to connect people all over the world throu
 
 ## Intro Video
 
-[Mod 1 Flatiron Project by Bob Whitmer and Lynn Amsbury](https://www.youtube.com/watch?v=IildNMZANqg&feature=youtu.be)
+[Mod 3 Flatiron Project by Bob Whitmer](https://youtu.be/PoxeLCi_3M8)
 
 ## Technologies
 
