@@ -79,7 +79,6 @@ function sendALetter(event){
     const letterCounterNode = event.currentTarget.parentNode
     const letterCounter = letterCounterNode.querySelector('#letter-counter')
     letterCounter.textContent = +(letterCounter.textContent) + 1
-    console.log(letterCounter)
     fetch((penpalURL+event.target.value), {
         method: "PATCH", 
         headers: {
