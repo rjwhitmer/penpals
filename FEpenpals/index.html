@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='index.js' defer></script>
@@ -8,18 +9,12 @@
     <title>Penpals!</title>
 </head>
 <body>
-    <h1>Welcome to PenPals!</h1>
     <nav>
-        <div id="sign-up">
-            <a href='signup.html'>Become a PenPal!</a>
-        </div>
-        <div id="guest">
-            <a href='penpals.html'>Continue as Guest!<a>
-        </div>
-        <div id="user">
-            <a href='user.html'>My Penpals!<a>
-        </div>
+        <button onclick="location.href='signup.html'">Become a PenPal!</button>
+        <button onclick="location.href='penpals.html'">Continue as Guest!</button>
+        <button onclick="location.href='user.html'">My Penpals!</button>
     </nav>
+    <h1>Welcome to PenPals!</h1>
     <div id="login">
         <form id="login-form">
             <h1>Already a Member?</h1>

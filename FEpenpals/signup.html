@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="signup.js" defer></script>
-    <link href="index.css" type="text/css" rel="stylesheet"/>
+    <link href="signup.css" type="text/css" rel="stylesheet"/>
     <title>Document</title>
 </head>
 <body>
+    <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='penpals.html'">Penpals</button>
+    </nav>
     <h1>Tell us a bit about yourself!</h1>
     <form id="penpal-form">
-        <input name="name" placeholder="Name"/>
-        <input name="address" placeholder="Address"/>
-        <input name="age" placeholder="Age"/>
-        <div id="image-upload-preview">
+        <h1>Name</h1>
+        <input name="name"/>
+        <h1>Address</h1>
+        <input name="address"/>
+        <h1>Age</h1>
+        <input name="age" type="number"/>
+        <!-- <div id="image-upload-preview">
             <p>Upload a picture!</p>
             <input type="file"
                 name="image"
@@ -25,16 +33,12 @@
             <div id="preview">
                 <img id="file-input-preview">
             </div>
-        </div>
-        <h2>Log-in information</h2>
+        </div> -->
+        <h2>This is how you will Log-in</h2>
         <input name="email" placeholder="E-mail Address"/>
         <input name="password" placeholder="Password"/>
         <input onclick="window.location.href='http://localhost:3001/penpals.html'" type="submit"/>
     </form>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="penpals.html">Penpals</a>
-    </nav>
 </body>
 </html>

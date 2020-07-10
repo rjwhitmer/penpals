@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="user.js" defer></script>
@@ -9,9 +10,9 @@
 </head>
 <body>
     <nav>
-        <a href='index.html'>Home<a>
-        <a href='penpals.html'>Find a new Penpal!<a>
-        <a href='index.html' id="logout">Logout</a>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='penpals.html'">Find a new Penpal</button>
+        <button id="logout" onclick="location.href='index.html'">Logout</button>
     </nav>
     <div id='penpals'></div>
 </body>

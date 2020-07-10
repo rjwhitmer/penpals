@@ -38,22 +38,26 @@ function renderPenpals(name, address, age, image, lettersReceived, id){
     const userAge = document.createElement('p')
     const userLettersReceived = document.createElement('p')
     const userImage = document.createElement('img')
-    const addPenpal = document.createElement('button')
+    const sendLetter = document.createElement('button')
+    const letterCount = document.createElement('p')
 
     $div.id = "penpal-card"
     $div.innerHTML = `<a>${capitalizeName(name)}</a>`
     userAddress.textContent =`Address: ${address}` 
     userAge.textContent = `Age: ${age}`
-    userLettersReceived.textContent = `Letters Received: ${lettersReceived}`
+    letterCount.textContent = lettersReceived
+    letterCount.id = "letter-counter"
+    userLettersReceived.textContent = `Letters Received: `
+    userLettersReceived.append(letterCount)
 
-    addPenpal.textContent = `Send a letter!`
-    addPenpal.value = id
-    addPenpal.addEventListener('click', sendALetter)
+    sendLetter.textContent = `Send a letter!`
+    sendLetter.value = id
+    sendLetter.addEventListener('click', sendALetter)
 
     $div.append(userAddress)
     $div.append(userAge)
     $div.append(userLettersReceived)
-    $div.append(addPenpal)
+    $div.append(sendLetter)
     penpalCards.append($div)
 }
 
@@ -68,5 +72,8 @@ function userLogout(event){
 }
 
 function sendALetter(event){
-    console.log(event.target.value)
+    event.preventDefault()
+    const letters = document.querySelector('#letter-counter')
+    letters.textContent = +(letters.textContent) + 1
+    
 }

@@ -54,7 +54,16 @@ table {
 }
 
 body {
-    background-image: url("./images/chad-peltola-HmORQ3_8yuM-unsplash.jpg");
+	background-image: url('./images/home-background.jpg');
+    background-size: 100%;
+    text-align: center;
+}
+
+body > h1 {
+	font-size: 48px;
+	text-align: center;
+	color: white;
+	margin: 3rem;
 }
 
 nav {
@@ -71,61 +80,28 @@ nav > button {
 }
 
 form {
+    display: inline-block;
+	padding: 15rem;
+	background-color: hsl(10 10% 80%);
+	opacity: .9;
+	border-radius: 10px;
+    padding: 2rem 4.25rem;
+	/* max-width: 200px; */
+}
+
+form > h1 {
+	background-color: hsl(10 10% 80%);
+
+	font-size: 32px;
+	color: gray;
+	margin: inherit;
+}
+
+form > input {
     display: flex;
-    flex-direction: column;
-    margin: .5rem;
-    width: 15rem;
-}
-
-form > input, button, #image-upload-preview {
-    margin: 5px;
-}
-
-#image-upload-preview {
-    border: solid rgba(255, 0, 0, .5) 1px;
-    padding: .5rem;
-}
-
-#image-upload-preview > p {
-    margin-bottom: 5px;
-}
-
-#file-input-preview {
-    max-height: 300px;
-    
-}
-#penpals {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-#penpal-card {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: .5rem;
-    margin-top: 1rem;
-    text-align: center;
-    width: 25rem;
-    max-height: 10rem;
-    background-color: hsl(10 10% 80%);
-    opacity: .8;
-}
-
-#penpal-card > button {
-    width: 3.5rem;
-    height: 3.5rem;
-    position: relative;
-    top: -10px;
-    right: -60px;
-}
-
-#penpal-card > * {
-    margin-top: 1em;
-}
-
-#greeting {
-    font-size: 48px;
-    text-align: center;
-    padding: 2rem;
+    flex-direction: row;
+    justify-content: inherit;
+    padding: 5px;
+    margin: 1rem;
+    border-radius: 5px;
 }
